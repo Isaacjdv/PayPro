@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rol de Pagos</title>
+    <link rel="stylesheet" href="contenido.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Rol de Pagos</h1>
+            <button id="logout">Cerrar Sesión</button>
+        </header>
+        <main>
+            <section class="filter-section">
+                <h2>Filtrar Pagos</h2>
+                <form id="filter-form">
+                    <input type="text" id="search" placeholder="Buscar por nombre o ID">
+                    <button type="submit">Filtrar</button>
+                </form>
+            </section>
+            <section class="table-section">
+                <table id="payments-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Fecha</th>
+                            <th>Monto</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Filas de la tabla se llenarán con JavaScript -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2024 Rol de Pagos. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+    <script src="contenido.js"></script>
+</body>
+</html>
