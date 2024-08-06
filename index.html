@@ -1,157 +1,157 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
-  <style media="screen">
-    *,
-    *:before,
-    *:after {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-    }
-    body {
-        background-color: #080710;
-        overflow: hidden; /* Para evitar el desplazamiento cuando aparece el mensaje emergente */
-    }
-    .background {
-        width: 430px;
-        height: 520px;
-        position: absolute;
-        transform: translate(-50%, -50%);
-        left: 50%;
-        top: 50%;
-    }
-    .background .shape {
-        height: 200px;
-        width: 200px;
-        position: absolute;
-        border-radius: 50%;
-    }
-    .shape:first-child {
-        background: linear-gradient(#be9038, #000000);
-        left: -80px;
-        top: -80px;
-    }
-    .shape:last-child {
-        background: linear-gradient(to right, #3180e9, #3b98af);
-        right: -30px;
-        bottom: -80px;
-    }
-    .login-container {
-        height: 520px;
-        width: 400px;
-        background-color: rgba(255, 255, 255, 0.13);
-        position: absolute;
-        transform: translate(-50%, -50%);
-        top: 50%;
-        left: 50%;
-        border-radius: 10px;
-        backdrop-filter: blur(10px);
-        border: 2px solid rgba(255, 255, 255, 0.1);
-        box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
-        padding: 50px 35px;
-        text-align: center;
-        opacity: 0; /* Comienza invisible */
-        transition: opacity 1s ease-in-out; /* Efecto de desvanecimiento */
-    }
-    .login-container.visible {
-        opacity: 1; /* Hacer visible */
-    }
-    .login-container * {
-        font-family: 'Poppins', sans-serif;
-        color: #ffffff;
-        letter-spacing: 0.5px;
-        outline: none;
-        border: none;
-    }
-    .login-container h1 {
-        font-size: 32px;
-        font-weight: 500;
-        line-height: 42px;
-    }
-    label {
-        display: block;
-        margin-top: 30px;
-        font-size: 16px;
-        font-weight: 500;
-    }
-    input {
-        display: block;
-        height: 50px;
-        width: 100%;
-        background-color: rgba(255, 255, 255, 0.07);
-        border-radius: 3px;
-        padding: 0 10px;
-        margin-top: 8px;
-        font-size: 14px;
-        font-weight: 300;
-        transition: background-color 0.3s ease; /* Efecto de transición en el fondo */
-    }
-    input:focus {
-        background-color: rgba(255, 255, 255, 0.2); /* Fondo al enfocar */
-    }
-    ::placeholder {
-        color: #e5e5e5;
-    }
-    button {
-        margin-top: 50px;
-        width: 100%;
-        background-color: #3180e9; /* Color de fondo */
-        color: #ffffff; /* Color del texto */
-        padding: 15px 0;
-        font-size: 18px;
-        font-weight: 600;
-        border-radius: 5px;
-        cursor: pointer;
-        border: none;
-        transition: background-color 0.3s ease; /* Efecto de transición en el fondo */
-    }
-    button:hover {
-        background-color: #2563eb; /* Color de fondo al pasar el ratón */
-    }
-    p {
-        margin-top: 30px;
-        font-size: 14px;
-    }
-    a {
-        color: #ffffff;
-        text-decoration: none;
-        font-weight: 500;
-        transition: color 0.3s ease; /* Efecto de transición en el color */
-    }
-    a:hover {
-        color: #e5e5e5;
-        text-decoration: underline;
-    }
-    .message-popup {
-        display: none;
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background: #fff;
-        color: #000;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        opacity: 0; /* Comienza invisible */
-        transition: opacity 1s ease-in-out; /* Efecto de desvanecimiento */
-    }
-    .message-popup.visible {
-        display: block; /* Mostrar el popup */
-        opacity: 1; /* Hacer visible */
-    }
-    .message-popup button {
-        margin-top: 10px;
-        background: #080710;
-        color: #fff;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <style>
+        *,
+        *:before,
+        *:after {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #080710;
+            overflow: hidden; /* Para evitar el desplazamiento cuando aparece el mensaje emergente */
+        }
+        .background {
+            width: 430px;
+            height: 520px;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            top: 50%;
+        }
+        .background .shape {
+            height: 200px;
+            width: 200px;
+            position: absolute;
+            border-radius: 50%;
+        }
+        .shape:first-child {
+            background: linear-gradient(#be9038, #000000);
+            left: -80px;
+            top: -80px;
+        }
+        .shape:last-child {
+            background: linear-gradient(to right, #3180e9, #3b98af);
+            right: -30px;
+            bottom: -80px;
+        }
+        .login-container {
+            height: 520px;
+            width: 400px;
+            background-color: rgba(255, 255, 255, 0.13);
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+            padding: 50px 35px;
+            text-align: center;
+            opacity: 0; /* Comienza invisible */
+            transition: opacity 1s ease-in-out; /* Efecto de desvanecimiento */
+        }
+        .login-container.visible {
+            opacity: 1; /* Hacer visible */
+        }
+        .login-container * {
+            font-family: 'Poppins', sans-serif;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+            outline: none;
+            border: none;
+        }
+        .login-container h1 {
+            font-size: 32px;
+            font-weight: 500;
+            line-height: 42px;
+        }
+        label {
+            display: block;
+            margin-top: 30px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        input {
+            display: block;
+            height: 50px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.07);
+            border-radius: 3px;
+            padding: 0 10px;
+            margin-top: 8px;
+            font-size: 14px;
+            font-weight: 300;
+            transition: background-color 0.3s ease; /* Efecto de transición en el fondo */
+        }
+        input:focus {
+            background-color: rgba(255, 255, 255, 0.2); /* Fondo al enfocar */
+        }
+        ::placeholder {
+            color: #e5e5e5;
+        }
+        button {
+            margin-top: 50px;
+            width: 100%;
+            background-color: #3180e9; /* Color de fondo */
+            color: #ffffff; /* Color del texto */
+            padding: 15px 0;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s ease; /* Efecto de transición en el fondo */
+        }
+        button:hover {
+            background-color: #2563eb; /* Color de fondo al pasar el ratón */
+        }
+        p {
+            margin-top: 30px;
+            font-size: 14px;
+        }
+        a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease; /* Efecto de transición en el color */
+        }
+        a:hover {
+            color: #e5e5e5;
+            text-decoration: underline;
+        }
+        .message-popup {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #fff;
+            color: #000;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            opacity: 0; /* Comienza invisible */
+            transition: opacity 1s ease-in-out; /* Efecto de desvanecimiento */
+        }
+        .message-popup.visible {
+            display: block; /* Mostrar el popup */
+            opacity: 1; /* Hacer visible */
+        }
+        .message-popup button {
+            margin-top: 10px;
+            background: #080710;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
     <div class="background">
@@ -202,24 +202,24 @@
                 const username = document.getElementById('username').value;
                 const password = document.getElementById('password').value;
 
-                if (username === 'admin' && password === 'admin') {
-                    window.location.href = 'admin/admin.html';
-                } else {
-                    const users = JSON.parse(localStorage.getItem('users')) || [];
-                    const user = users.find(user => user.username === username && user.password === password);
+                // Verifica las credenciales del usuario
+                const users = JSON.parse(localStorage.getItem('users')) || [];
+                const user = users.find(user => user.username === username && user.password === password);
 
-                    if (user) {
-                        if (username !== 'admin') {
-                            // Redirigir a la página de contenido si el usuario es diferente a "admin"
-                            window.location.href = 'contenido/contenido.html';
-                        } else {
-                            // Mostrar mensaje si el usuario es "admin"
-                            showMessage('¡Inicio de sesión exitoso!', '#d4edda'); // Color verde para éxito
-                        }
+                if (user) {
+                    // Guardar la sesión del usuario en localStorage
+                    localStorage.setItem('loggedUser', JSON.stringify(user));
+
+                    if (username === 'admin1') {
+                        // Redirigir al admin a su página
+                        window.location.href = 'admin/admin.html';
                     } else {
-                        // Mostrar mensaje de error
-                        showMessage('Usuario o contraseña incorrectos', '#f8d7da'); // Color rojo para error
+                        // Redirigir al usuario común a la página de contenido
+                        window.location.href = 'contenido/contenido.html';
                     }
+                } else {
+                    // Mostrar mensaje de error si las credenciales son incorrectas
+                    showMessage('Usuario o contraseña incorrectos', '#f8d7da'); // Color rojo para error
                 }
             });
 
